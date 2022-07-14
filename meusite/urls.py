@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# adicionado para poder importar o urls do app core
+from django.urls import include
+
+
+
 urlpatterns = [
+    path('', include('meusite.core.urls', namespace='core')),
     path('admin/', admin.site.urls),
 ]
